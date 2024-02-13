@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper white">
+      <div class="nav light">
+        <img
+          src="https://jdc.jefferson.edu/assets/md5images/ff2cb006f5fea0f7277ce4464afed2da.gif"
+          width="25"
+          height="25"
+        />
+        <h3 width="53" height="17">Book</h3>
+        <div class="dark">
+          <div class="circle left"></div>
+        </div>
+
+        <div class="sign">
+          <p class="sign-text" onclick="toggleLoginModal()">Sign In </p>
+          
+      </div>
+      <button id="logoutButton"  onclick="logout()">Logout</button>
+        <div id="loginModal" class="modal">
+          <div class="modal-content">
+            <button class="close" onclick="closeLoginModal()">x</button>
+            <h2>Login</h2>
+            <input type="text" id="username" required  placeholder="username" />
+            <input type="email" id="useremail" required placeholder="email" />
+            <input
+              type="password"
+              id="password"
+              required
+              placeholder="password"
+            />
+            <button onclick="login()">Sign In</button>
+            <button onclick="signup()">Sign Up</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider">
+        <ul class="left" id="categoryList">
+          <li class="list">ALL CATEGORIES</li>
+          <li class="list">Young Adult Paperback Monthly</li>
+          <li class="list">Hardcover Nonfiction</li>
+          <li class="list">Middle Grade Paperback Monthly</li>
+          <li class="list">Series Books</li>
+          <li class="list">Audio Fiction</li>
+          <li class="list">Combined Print and E-Book Nonfiction</li>
+          <li class="list">Young Adult Hardcover</li>
+          <li class="list">Graphic Books and Manga</li>
+          <li class="list">Business Books</li>
+          <li class="list">Mass Market Monthly</li>
+          <li class="list">Childrens Middle Grade Hardcover</li>
+          <li class="list">Hardcover Fiction</li>
+          <li class="list">Picture Books</li>
+          <li class="list">Trade Fiction Paperback</li>
+          <li class="list">Audio Nonfiction</li>
+          <li class="list">Advice How-To and Miscellaneous</li> 
+          <li class="list">Paperback Nonfiction</li>
+        </ul>
+      </div>
+      <div class="support_container">
+        <div class="content">
+          <h2 class="support-titile">Support Ukrain</h2>
+          <span>
+            <img
+              src="https://avatars.githubusercontent.com/u/86576443?v=4"
+              width="20px"
+              height="20px"
+              alt=""
+          /></span>
+        </div>
+        <ul class="ukrain">
+          <li>
+            01<a
+              href="https://www.savethechildren.net/what-we-do/emergencies/ukraine"
+              target="_blank"
+            >
+              <img
+                src="https://yevhenii2022.github.io/team-proj-js-book-app/01-found-1.a728105c.png"
+                width="100px"
+                alt=""
+              />
+            </a>
+          </li>
+          <li>
+            02<a
+              href="https://www.projecthope.org/country/ukraine/"
+              target="_blank"
+            >
+              <img
+                src="https://yevhenii2022.github.io/team-proj-js-book-app/02-found-1.feda50b1.png"
+                width="100px"
+                alt=""
+              />
+            </a>
+          </li>
+          <li>
+            03<a href="https://u24.gov.ua/" target="_blank">
+              <img
+                src="https://yevhenii2022.github.io/team-proj-js-book-app/03-found-1.89276286.png"
+                width="100px"
+                alt=""
+              />
+            </a>
+          </li>
+          <li>
+            04<a
+              href="https://internationalmedicalcorps.org/country/ukraine/"
+              target="_blank"
+            >
+              <img
+                src="https://yevhenii2022.github.io/team-proj-js-book-app/04-found-1.cbff70d4.png"
+                width="100px"
+                alt=""
+              />
+            </a>
+          </li>
+          <li>
+            05<a href="https://www.msf.org/ukraine" target="_blank">
+              <img
+                src="https://yevhenii2022.github.io/team-proj-js-book-app/05-found-1.0fdab6a1.png"
+                width="100px"
+                alt=""
+              />
+            </a>
+          </li>
+          <li>
+            06<a href="https://www.razomforukraine.org/" target="_blank">
+              <img
+                src="https://yevhenii2022.github.io/team-proj-js-book-app/06-found-1.c5359439.png"
+                width="100px"
+                alt=""
+              />
+            </a>
+          </li>
+          <li>
+            07<a
+              href="https://www.actionagainsthunger.org/location/europe/ukraine/"
+              target="_blank"
+            >
+              <img
+                src="https://yevhenii2022.github.io/team-proj-js-book-app/07-found-1.174022ef.png"
+                width="100px"
+                alt=""
+              />
+            </a>
+          </li>
+          <li>
+            08<a href="https://www.wvi.org/emergencies/ukraine" target="_blank">
+              <img
+                src="https://yevhenii2022.github.io/team-proj-js-book-app/08-found-1.7aca5d21.png"
+                width="100px"
+                alt=""
+              />
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="main" id="book-container">
+        
+      </div>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <button class="close" onclick="closeModal()">x</button>
+          <div class="modal-body">
+            <div class="modal-img">
+              <img id="modalImage" alt="Book Image" />
+            </div>
+            <div class="modal-details">
+              <h4 id="modalTitle"></h4>
+              <p id="modalAuthor"></p>
+              <p id="modalDescription"></p>
+              <a id="modalProductUrl" target="_blank"
+                ><img
+                  src="https://yevhenii2022.github.io/team-proj-js-book-app/amazon-shop-1x.d33dc585.png"
+              /></a>
+
+              <button id="addToShoppingListBtn" onclick="addToShoppingList()">
+                Add to Shopping List
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="main main2" id="book-container">
+        <div id="selectedListContainer"></div>
+        <div id="bookListContainer"></div>
+      </div>
+    </div>
+<footer>
+    <p>© 2023 | All Rights Reserved | Developed withby
+        GoIT Students</p>
+</footer>
+    <script src="index.js"></script>
+  </body>
+</html>
